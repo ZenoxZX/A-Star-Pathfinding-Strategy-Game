@@ -8,7 +8,12 @@ namespace ZenoxZX.StrategyGame.Grid
     public class GridSystem : MonoBehaviour
     {
         [SerializeField] GridNode[] gridNodeArray;
-        private int2 gridSize;
+        [SerializeField] int2 gridSize;
+
+        private void Start()
+        {
+            CreateGridArray(5, 5);
+        }
 
         public void CreateGridArray(int width, int height)
         {
