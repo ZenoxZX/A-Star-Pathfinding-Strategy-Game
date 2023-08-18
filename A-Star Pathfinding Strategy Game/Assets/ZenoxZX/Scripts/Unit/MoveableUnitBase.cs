@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ZenoxZX.StrategyGame.Modules;
-using ZenoxZX.StrategyGame.Grid;
+using ZenoxZX.StrategyGame.GridS;
 
 namespace ZenoxZX.StrategyGame
 {
