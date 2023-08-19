@@ -9,6 +9,7 @@ namespace ZenoxZX.StrategyGame
         [Header("Base")]
         public string unitName = "New Unit";
         public int health = 1;
-        public Sprite uiSprite;
+        public Sprite selectionSprite;
+        public Sprite worldSprite;
     }
 }

@@ -38,5 +38,19 @@ namespace ZenoxZX.StrategyGame.Utils
         }
 
         #endregion
+
+        #region Get 2D Mouse World Position
+
+        public static Vector3 GetMouseWorldPosition() 
+        {
+            Vector3 v = GetMouseWorldPositionWithZ();
+            v.z = 0;
+            return v;
+        }
+        public static Vector3 GetMouseWorldPositionWithZ() => GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
+        public static Vector3 GetMouseWorldPositionWithZ(Camera worldCamera) => GetMouseWorldPositionWithZ(Input.mousePosition, worldCamera);
+        public static Vector3 GetMouseWorldPositionWithZ(Vector3 screenPosition, Camera worldCamera) => worldCamera.ScreenToWorldPoint(screenPosition);
+
+        #endregion
     }
 }

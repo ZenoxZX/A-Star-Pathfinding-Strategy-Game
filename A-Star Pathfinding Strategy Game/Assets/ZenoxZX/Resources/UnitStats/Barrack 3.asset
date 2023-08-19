@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Barrack 3
   health: 100
-  uiSprite: {fileID: 0}
-  productionTime: 0
+  selectionSprite: {fileID: 0}
+  worldSprite: {fileID: 0}
+  width: 4
+  height: 4

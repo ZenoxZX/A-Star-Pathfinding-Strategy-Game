@@ -8,5 +8,6 @@ namespace ZenoxZX.StrategyGame
     {
         [Header("Moveable")]
         public float speed = 5;
+        public float reachDistance = 1;
     }
 }

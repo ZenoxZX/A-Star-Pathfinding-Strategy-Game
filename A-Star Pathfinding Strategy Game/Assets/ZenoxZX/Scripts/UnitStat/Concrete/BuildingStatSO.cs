@@ -8,6 +8,7 @@ namespace ZenoxZX.StrategyGame
     public class BuildingStatSO : UnitStatBaseSO
     {
         [Header("Building")]
-        public float productionTime;
+        public int width = 1;
+        public int height = 1;
     }
 }
