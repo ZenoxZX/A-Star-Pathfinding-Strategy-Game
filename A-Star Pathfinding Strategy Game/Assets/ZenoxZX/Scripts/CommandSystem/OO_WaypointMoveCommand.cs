@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ZenoxZX.StrategyGame.CommandSystem
 {
-    public class WaypointMoveCommand : IProgressiveCommand
+    public class OO_WaypointMoveCommand : IProgressiveCommand
     {
         readonly Transform transform;
         readonly Queue<MoveCommand> moveCommandQ;
@@ -13,7 +13,7 @@ namespace ZenoxZX.StrategyGame.CommandSystem
         readonly int totalWaypointCount;
         readonly float progressMultiplier;
 
-        public WaypointMoveCommand(Transform transform, Vector3[] wayPointArray, float speed, float reachDistance = .1f)
+        public OO_WaypointMoveCommand(Transform transform, Vector3[] wayPointArray, float speed, float reachDistance = .1f)
         {
             this.transform = transform;
 

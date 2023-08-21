@@ -10,5 +10,7 @@ namespace ZenoxZX.StrategyGame.HealthSystem
 
         void TakeDamage(float value) => HealthComponent.TakeDamage(value);
         void Heal(float value) => HealthComponent.Heal(value);
+
+        bool IsDead => HealthComponent.Health <= 0;
     }
 }
