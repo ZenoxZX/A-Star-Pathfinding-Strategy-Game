@@ -9,5 +9,6 @@ namespace ZenoxZX.StrategyGame
     {
         [Header("Attackable")]
         public float damage = 1;
+        public float attackRange = 5;
     }
 }

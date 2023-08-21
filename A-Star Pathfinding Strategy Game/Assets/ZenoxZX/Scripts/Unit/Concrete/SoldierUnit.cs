@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ZenoxZX.StrategyGame.HealthSystem;
+using ZenoxZX.StrategyGame.CommandSystem;
 
 namespace ZenoxZX.StrategyGame
 {
@@ -11,7 +11,18 @@ namespace ZenoxZX.StrategyGame
 
         public void Attack(UnitBase unit)
         {
-            unit.HealthComponent.TakeDamage(attackableUnitStat.damage);
+            bool unitInRange = AttackCommand<UnitBase>.InRange(unit, transform, attackableUnitStat.attackRange);
+
+            if (unitInRange)
+            {
+                ICommand command = new AttackCommand<UnitBase>(unit, transform, 1, 1, 1, null);
+                CommandMachine.ClearAdd(command);
+            }
+
+            else
+            {
+                // Move to closest path to attack
+            }
         }
 
         #region MONO
@@ -20,6 +31,7 @@ namespace ZenoxZX.StrategyGame
         {
             base.Awake();
             attackableUnitStat = unitStats as AttackableUnitStat;
+            CommandMachine = new(15);
         }
 
         #endregion

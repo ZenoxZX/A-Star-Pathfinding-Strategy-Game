@@ -6,15 +6,21 @@ namespace ZenoxZX.StrategyGame.CommandSystem
 {
     public interface ICommand
     {
+        bool IsTerminated { get; }
         void Execute();
         void Complete();
         void Terminate();
         bool IsCompleted();
-        bool IsTerminated { get; }
     }
 
     public interface IProgressiveCommand : ICommand
     {
         float Progress();
+    }
+
+    public interface ICommandListener
+    {
+        public CommandMachine CommandMachine { get; }
+        public void AddCommand(ICommand command) => CommandMachine.Add(command);
     }
 }

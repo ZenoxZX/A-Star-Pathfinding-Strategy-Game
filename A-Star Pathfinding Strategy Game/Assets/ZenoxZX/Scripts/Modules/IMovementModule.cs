@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ZenoxZX.StrategyGame.Modules
 {
-    public interface IMovementModule<T>
+    public interface IMovementModule<T> : IModule<T>
     {
         bool IsMoving { get; }
         void Move(T t);

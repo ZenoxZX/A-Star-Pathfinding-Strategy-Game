@@ -36,6 +36,8 @@ namespace ZenoxZX.StrategyGame.CommandSystem
             progressMultiplier = 1 / castTime;
         }
 
+        public static bool InRange(TEnemy enemy, Transform transform, float attackRange) => (enemy.transform.position - transform.position).sqrMagnitude < (attackRange * attackRange);
+
         public bool IsTerminated { get; private set; } = false;
 
         public void Complete()

@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace ZenoxZX.StrategyGame
 {
-    public interface IAttackModule<T>
+    public interface IModule<T>
     {
-        void Attack(T t);
+
     }
 }
