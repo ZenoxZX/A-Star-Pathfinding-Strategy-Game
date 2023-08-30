@@ -89,12 +89,10 @@ namespace ZenoxZX.StrategyGame.GridS
 
         public void SetGridObject(int x, int y, TGridObject value)
         {
-            if (IsValidCoordinate(x, y))
-            {
-                gridArray[x, y] = value;
-                tmpArray[x, y].SetText(value.ToString());
-                TriggerGridObjectChange(x, y);
-            }
+            if (!IsValidCoordinate(x, y)) return;
+            gridArray[x, y] = value;
+            tmpArray[x, y].SetText(value.ToString());
+            TriggerGridObjectChange(x, y);
         }
 
         public void SetGridObject(Vector3 worldPosition, TGridObject value)
@@ -103,13 +101,7 @@ namespace ZenoxZX.StrategyGame.GridS
             SetGridObject(i2.x, i2.y, value);
         }
 
-        public TGridObject GetGridObject(int x, int y)
-        {
-            if (IsValidCoordinate(x, y))
-                return gridArray[x, y];
-
-            return default;
-        }
+        public TGridObject GetGridObject(int x, int y) => IsValidCoordinate(x, y) ? gridArray[x, y] : default;
 
         public TGridObject GetGridObject(Vector3 worldPosition)
         {
